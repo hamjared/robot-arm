@@ -1,0 +1,14 @@
+<div *ngIf="axis">
+
+  <h2>{{axis.name | uppercase}} Details</h2>
+  <div>
+    <label for="axis-endpoint">Axis Endpoint: {{axis.endpoint}}</label>
+  </div>
+  <div>
+    <label for="axis-setvalue">Rotate Stepper by: </label>
+    <input id="set-value" [(ngModel)]="angle" placeholder="0" >
+    <label for="axis-setvalue">degrees  </label>
+    <button type="button" (click)="setAngle()">Send</button>
+  </div>
+
+</div>

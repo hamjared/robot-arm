@@ -4,7 +4,7 @@
 
 #include "Stepper.h"
 
-#define DEFAULT_TIME_BETWEEN_STEPS_MILLISECONDS 50
+#define DEFAULT_TIME_BETWEEN_STEPS_MILLISECONDS 100
 
 Stepper::Stepper(int dir_pin, int step_pin):
 	dir_pin{dir_pin},
@@ -55,6 +55,9 @@ void Stepper::rotate(double deg, Direction direction)
 {
 	int steps = (int) (deg / DEGREES_PER_STEP);
 	steps_to_perform = direction == CW ? steps : -1 * steps;
+	Serial.print("Rotating stepper by "); Serial.print(deg); Serial.print("deg, Steps: ");
+	Serial.println(steps_to_perform);
+
 	update();
 }
 

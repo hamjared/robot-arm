@@ -13,6 +13,8 @@
 
 void getStatus();
 void setServo1Angle();
+void rotateStepper();
+void getAllAxes();
 
 #endif
 

@@ -6,6 +6,8 @@
 
 
 
+
+#include <ArduinoJson.h>
 #include "RobotArmApi.h"
 #include "esp32-hal-ledc.h"
 #include "ServoWrapper.h"
@@ -31,7 +33,7 @@ void setup() {
 
 	stepper.init();
 
-	stepper.rotate(12000, Stepper::Direction::CCW);
+	stepper.rotate(60, Stepper::Direction::CCW);
 
 	xTaskCreate(webServer, "Task2", 30000, NULL, 1, NULL);
 
@@ -69,6 +71,8 @@ void webServer(void* stuff) {
 
 
     server.on("/status", getStatus);
+	server.on("/getAllAxes", getAllAxes);
+	server.on("/rotateStepper", HTTP_POST, rotateStepper);
 	server.on("/setServoAngle", HTTP_POST, setServo1Angle);
     server.begin();
     Serial.println("Web server setup");

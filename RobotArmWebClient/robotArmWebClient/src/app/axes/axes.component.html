@@ -1,0 +1,12 @@
+<h2>Available Axes</h2>
+
+<ul class="axes">
+  <li *ngFor="let axis of axes">
+    <button [class.selected]="axis === selectedAxis" type="button" (click)="onSelect(axis)">
+      <span class="badge">{{axis.id}}</span>
+      <span class="name">{{axis.name}}</span>
+    </button>
+  </li>
+</ul>
+
+<app-axis-detail [axis]="selectedAxis"></app-axis-detail>
