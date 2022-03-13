@@ -1,0 +1,20 @@
+
+RoboticArm/.vs/RoboticArm/v16/.suo
+*.vcxproj
+*.filters
+*.user
+RoboticArm/src/arduino folders read me.txt
+*.o
+*.d
+*.bin
+*.map
+*.elf
+*.buildinfo
+RoboticArm/Config.h
+*.xml
+*.ipch
+*.db
+*.db-shm
+RoboticArm/.vs/RoboticArm/v17/.suo
+*.db-wal
+*.opendb
